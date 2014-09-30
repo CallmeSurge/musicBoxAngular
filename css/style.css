@@ -1,7 +1,7 @@
 
 body {
 	background-attachment: fixed;
-	/*background-size: cover;*/
+	font-family: 'Roboto', sans-serif;
 	color: #000000;
 	margin: 0; 
 	padding: 0;
@@ -32,7 +32,6 @@ body {
 /*the heading text...name of the app*/
 h1 {
 	margin-left: 100px;
-	font-family: 'Rock Salt', cursive;
 	margin-bottom: -50px;
 	text-align: left;
 }
@@ -62,15 +61,16 @@ h1 {
 
 #nav-bar li a{
 	color: #fff;
-	font-family: 'Calligraffitti', cursive;
 	text-decoration: none;
 	margin-right: 5px;
 	padding: 2px 2px;
 }
 
-#nav-bar li a:hover {
+#nav-bar li a:hover,
+footer a:hover {
 	background-color: skyblue;
 	border-radius: 2px;
+	text-decoration: none;
 }
 
 #searchBar ul {
@@ -117,11 +117,9 @@ h1 {
 
 /*the text above that states "Powered by SoundCloud"*/
 p {
-	font-family: 'Calligraffitti', cursive;
 	text-align: right;
 	font-weight: bold;
 	vertical-align: top;
-	margin-right: 50px;
 }
 
 /******************************
@@ -131,7 +129,6 @@ THE SEARCH RESULT
 /*each divs that house individual searchResult content*/
 .post {
 	background: url(../img/wall1.gif);
-	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 	margin: 1% 1%;
 	width: 250px;
@@ -148,6 +145,9 @@ THE SEARCH RESULT
 	margin: auto;
 	margin-top: 100px;
 	width: 150px;
+}
+.preloader p {
+	text-align: center;
 }
 
 
@@ -197,7 +197,34 @@ THE SEARCH RESULT
     overflow:hidden; /* older browsers */
 }
 
-/*the position of the album-art on the div*/
-#songImg {
+/**********
+ABOUT
+***********/
 
+#about {
+	margin: auto;
+	width: 60%;
+}
+#about p {
+	text-align: left;
+}
+
+/****************
+FOOTER
+*****************/
+footer, footer p {
+	font-size: 12px;
+	text-align: center;
+	padding-top: 50px;
+	color: #0d2ca6;
+	clear:both;
+	padding-bottom: 20px;
+}
+footer p {
+	padding-top: 0px;
+}
+.social-icon {
+	width: 20px;
+	height: 20px;
+	margin: 0 5px;
 }

@@ -16,13 +16,14 @@
 		$scope.getSong = function(){
 			$scope.results = "";
 			$scope.loading = true;
-			config.params.q = $scope.song || "Eminem";
+			config.params.q = $scope.song || "Trey Songz";
 			$http.jsonp(url, config).success(function(tracks){
 				$scope.loading = false;
 				console.log(tracks);
 				$scope.results= tracks;
 			})
 		}
+		$scope.playState = false;
 
 		$scope.getSong();
 
@@ -38,10 +39,28 @@
 		}
 
 		$scope.playSong = function(stream){
+			$scope.playState = true;
 			$scope.audioLink = stream;
 			console.log($scope.audioLink);
-			$scope.play();
 			return false;
+		}
+
+		$scope.present = function(i){
+			if(i === undefined){
+				return false
+			} 
+			else {
+				return true;
+			}
+		}
+
+		$scope.downloadable = function(j){
+			if(j === null){
+				return false
+			} 
+			else {
+				return true;
+			}
 		}
 
 		$scope.tab = 1;
@@ -51,10 +70,6 @@
 		};
 		$scope.isSelected = function(){
 			return $scope.tab;
-		};
-
-		$scope.play = function(){ 
-			$scope.audio.play();
 		};
 
 
