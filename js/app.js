@@ -15,11 +15,11 @@
 
 		$scope.getSong = function(){
 			$scope.results = "";
+			$scope.song = "";
 			$scope.loading = true;
 			config.params.q = $scope.song || "Trey Songz";
 			$http.jsonp(url, config).success(function(tracks){
 				$scope.loading = false;
-				console.log(tracks);
 				$scope.results= tracks;
 			})
 		}
@@ -45,7 +45,7 @@
 			return false;
 		}
 
-		$scope.present = function(i){
+		$scope.canPlay = function(i){
 			if(i === undefined){
 				return false
 			} 

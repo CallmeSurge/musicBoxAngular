@@ -9,7 +9,6 @@
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Roboto|Open+Sans' rel='stylesheet' type='text/css'>
 		<link href= "img/headph.png" rel="shortcut icon" type="image/x-icon">
 		<link rel="stylesheet" href="css/style.css">
-		<link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Calligraffitti|Rock+Salt|Satisfy' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body ng-controller="appController">
@@ -38,15 +37,17 @@
 						</ul>
 					</div>
 					<div id="search">
+						<form>
 						<ul>
 							<li>
 								<input type="text" id="searchField" placeholder="Search for Artists or Songs" ng-model="song"/>
 							</li>
 
 							<li>
-								<input type="button" id="searchButton" value="" ng-click="getSong()"/>
+								<input type="submit" id="searchButton" value="" ng-click="getSong()"/>
 							</li>
 						</ul>
+						</form>
 					</div>
 				</div>
 				<div id= "searchResult" class="pages" ng-show="isSelected() === 1">
@@ -54,7 +55,7 @@
 						<img src = "img/SPIN.GIF">
 						<p>Loading...</p>
 					</div>
-					<div class="post" ng-repeat="result in results" ng-show = "present(result.stream_url)">
+					<div class="post" ng-repeat="result in results" ng-show = "canPlay(result.stream_url)">
 						<ul id="content">
 							<li><img id="songImg" ng-src="{{artworkImage(result.artwork_url)}}"/></li><br>
 							<li class="songName">{{result.title}}</li>
