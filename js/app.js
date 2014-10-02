@@ -15,7 +15,6 @@
 
 		$scope.getSong = function(){
 			$scope.results = "";
-			$scope.song = "";
 			$scope.loading = true;
 			config.params.q = $scope.song || "Trey Songz";
 			$http.jsonp(url, config).success(function(tracks){
